@@ -1,29 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
 
-h1,h2,h3,h4,h5,h6,p,a{
+body{
     font-family: "Noto Sans TC", sans-serif;
-    text-decoration:none;
-    color: #212529; 
-}
-
-
-
-h1,h2,h3,h4,h5,h6{
-    line-height: 1.2;
-    font-weight: 700;
-    letter-spacing: 0.05rem;
-}
-
-p,a{
     line-height: 1.5;
-    font-weight: 400;
-    letter-spacing: 0.05rem;
+    letter-spacing: 0.05em;
+}
+
+a{
+    text-decoration: none;
 }
 
 img{
     max-width:100%;
     vertical-align: middle;
 }
+
 
 .bi bi-person{
     font-weight: 500;
@@ -55,6 +46,13 @@ img{
     margin: 0 auto;
 }
 
+@media (max-width:768px) {
+    .container{
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
 header ul{
     display: flex;
     padding: 16px 0;
@@ -64,10 +62,30 @@ header ul li a{
     display: inline-block;
     padding: 12px 0;
     margin-right: 40px;
+    color: #212529;
+}
+
+header ul li:nth-last-child(1) a{
+    margin-right: 0px;
 }
 
 header ul li a:hover{
     color: gray;
+}
+
+@media (max-width:768px) {
+
+    header ul li a{
+        margin-right: 0px;
+    }
+    
+    header ul li:nth-child(2){
+        display: none;
+    }
+
+     header ul li:nth-child(3){
+        display: none;
+    }
 }
 
 .mr-l{
@@ -78,243 +96,202 @@ header ul li a:hover{
     margin-right: auto;
 }
 
-main{
+.banner{
+    background-image: url("https://github.com/hexschool/2022-web-layout-training/blob/main/2025-week1/hero.png?raw=true");
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 64px;
+}
+
+
+.text-align-center{
+    text-align: center;
+}
+
+.bannerPadding{
+       padding: 158px 0;
+}
+
+.banner .container h1{
+    font-size: 40px;
+    color: white;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+.banner .container h3{
+    font-size: 28px;
+    color: white;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+@media (max-width:768px) {
+    .banner{
+        background-image: url("https://github.com/hexschool/2022-web-layout-training/blob/main/2025-week3-4/hero-sm.png?raw=true");
+        height: 240px;
+    }
+    
+    .bannerPadding{
+        padding: 87px 0;
+    }
+
+    .banner .container h1{
+        font-size: 28px;
+        margin-bottom: 8px;
+    }
+
+    .banner .container h3{
+        font-size: 20px;
+    }
+}
+
+
+.row{
+    display: flex;
+}
+
+.justify-content-center{
+    justify-content: center;
+}
+
+.col-8{
+    width: 66.666666%;
+}
+
+.col-10{
+    width: 83.333333%;
+}
+
+
+@media (max-width:768px) {
+    .col-8{
+    width: 100%;
+}
+
+.col-10{
+    width: 100%;
+}
+
+}
+
+.greenbg{
+    text-align: center;
+    background-color: #F5FEE7;
+    margin-bottom: 48px;
     padding-top: 32px;
 }
 
-.breadCrumb{
-    margin-bottom: 12px;
-}
-
-.breadCrumb1{
-    color: #6C757D;
-}
-
-.breadCrumb2{
-    color: #DEE2E6;
-    margin-right: 12px;
-}
-
-.productTitle{
-    font-size:32px;
-    margin-bottom: 16px;
-}
-
-.priceArea{
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px;
-}
-
-.priceArea h5{
-    font-size: 20px;
+.greenbg h3{
     color: #57A203;
-    margin-right: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 16px;
 }
 
-.priceArea p{
-    color: #ADB5BD;
+.greenbg p{
     font-weight: 400;
-    text-decoration:line-through;
-    font-size: 14px;
+    padding-bottom: 32px;
 }
 
-.productDetail{
-    margin-bottom: 32px;
+@media (max-width:768px) {
+    .greenbg{
+        padding: 24px;
+        text-align: justify;
+    }
+
+    .greenbg p{
+        padding-bottom: 0px;
+    }
 }
 
-.allcolor{
-    width: 100%;
-    display: flex;
-}
-
-.productColor{
-    margin-bottom: 32px;
-}
-
-.productColor > p{
-    margin-bottom: 8px;
-}
-
-.colorselect{
-    text-align: center;
-    width: 64px;
-    margin-right: 8px;
-    cursor: pointer;
-}
-
-.colorselect img{
-    width: 100%;
-}
-
-.colorselect p{
-    color: #6C757D;
-}
-
-.productSize{
-    margin-bottom: 48px;
-}
-
-.allSize{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.productSize >p{
-    margin-bottom: 8px;
-}
-
-.sizeBtn a{
+.brand{
     display: block;
-    padding: 12px 24px;
-    border: 1px solid #DEE2E6;
-    border-radius: 4px;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    box-sizing: border-box;
-    cursor: pointer;
-    font-weight: 500;
-}
-
-.sizeBtn a:hover{
-     background: black;
-     color: white;
-}
-
-.sizeBtn a:focus{
-     border: 1px solid #212529;
-}
-
-.btnDisabled{
-    opacity: 40%;
-}
-
-.remainder{
-    color:#D74F4F ;
-    font-size: 14px;
-}
-
-.btnArea{
-    margin-bottom: 32px;
-    display: flex;
-}
-
-.btnArea a{
-    display: block;
-    width: 49%;
-    text-align: center;
-    padding: 12px 0;
-    border: 1px solid #212529;
-    margin-right: 8px;
-    border-radius: 4px;
-    font-weight: 500;
-}
-
-.btnArea a:first-child:hover{
-    background: black;
-    color:white;
-}
-
-.reserve{
-    background: black;
-    color: white;
-}
-
-.reserve:hover{
-    background: white;
-    color: black;
-}
-
-.btnArea a i{
-    margin-right: 8px;
-}
-
-.descriptionArea{
-    padding: 12px 0;
     border-bottom: 1px solid #DEE2E6;
+    margin-bottom: 48px;
+    padding-bottom: 48px;
 }
 
-.descriptionArea h6{
-    margin-bottom: 4px;
-    line-height: 1.5;
-}
 
-.descriptionArea p{
-    line-height: 1.5;
-    color: #6C757D;
-}
+.pic{margin-bottom: 24px;}
 
-.title{
-    font-size:28px;
-    padding: 7px 0;
+
+
+.brand h2{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 5%;
     margin-bottom: 24px;
 }
 
-.content{
-    display: flex;
-    justify-content: left;
-    flex-direction: row-reverse;
-    margin-bottom: 32px;
-}
-
-.productIntro{
-    max-width: 526px;
-}
-
-
-
-.menu a:hover{
-    color: #8ed43e;
-}
-
-.menu a:focus{
+.brand h3{
     color: #57A203;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 5%;
+    margin-bottom: 16px;
 }
 
-
-.productList{
-    max-width: 746px;
-    margin-right: 24px;
+.brand p{
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 5%;
+    color: #212529;
 }
 
-.productList_Top{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.product{
-    max-width: 369px;
-    padding: 0 4px;
-    margin-bottom: 8px;
-    box-sizing: border-box;
-}
-
-.productImg{
-    width: 100%;
-}
-
-.content2{
-    width: 100%;
-    margin-bottom: 40px;
-    padding: 48px 0;
-}
-
-.product2{
-    max-width: 306px;
-    margin-right: 24px;
-}
-
-.productImg2{
-    width: 100%;
+.brand ul li{
+    margin-left: 24px;
     margin-bottom: 12px;
-}
-
-.mr-0{
-    margin: 0;
+    list-style-type: disc;
 }
 
 
+
+.brand ul li span{
+    border-right: 1px solid #000000;
+    padding-right: 8px;
+    margin-right: 8px;
+}
+
+.brand ol li {
+    margin-bottom: 12px;
+    list-style-type: none;
+    border-left: 3px solid #DEE2E6;
+    padding-left: 12px;
+    display: flex;
+}
+
+.brand ol li p{
+    align-items: center;
+}
+
+.brand a{
+    display: block;
+    text-decoration: none;
+    margin-bottom: 16px;
+    font-weight: 500;
+    color:#57A203;
+    line-height: 1.5;
+    letter-spacing: 5%;
+}
+.brand a span{
+    margin-left: 6px;
+    border-bottom: 1px solid #57A203;
+}
+
+@media (max-width:768px) {
+    .brand h2{
+        font-size: 20px;
+    }
+
+    .brand h3{
+        font-size: 16px;
+    }
+}
 
 .discount{
     display: flex;
@@ -327,6 +304,8 @@ main{
 .discount h4{
     font-size: 24px;
     margin-right: 24px;
+    font-weight: 700;
+    
 }
 
 .discount a{
@@ -335,6 +314,7 @@ main{
     background: black;
     color: white;
     padding:12px 24px;
+    border-radius: 4px;
 }
 
 .discount a:hover{
@@ -342,6 +322,17 @@ main{
     background: white;
 }
 
+@media (max-width:768px) {
+    .discount h4{
+        font-size: 20px;
+        margin-right: 16px;
+        font-weight: 700;
+    }
+
+    .discount a{
+        padding: 8px;
+    }
+}
 
 footer{
     background: #F8F9FA;
@@ -357,12 +348,31 @@ footer ul li a{
     display: inline-block;
     padding: 12px 0;
     margin-left: 40px;
+    color: #212529;
 }
 
 footer ul li a:hover{
     color: gray;
 }
 
+@media (max-width:768px) {
+    footer{
+        padding: 32px 0;
+    }
+
+    footer ul{
+        padding: 0;
+        margin-bottom: 24px;
+    }
+    
+    footer .container ul{
+        flex-direction: column;
+    }
+
+    footer ul li a{
+        margin: 0;
+    }
+}
 
 .copyright{
     text-align: center;
